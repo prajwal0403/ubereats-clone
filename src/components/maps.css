@@ -5,6 +5,7 @@
 #map{
     margin: 40px 0px;
     width: 100%;
+    max-height: 450px;
     display: flex;
     justify-content: center;
     background-color: #82aae8;
@@ -22,4 +23,14 @@
     font-size: 16px;
     line-height: 24px;
     cursor: pointer;
+}
+@media only screen and (max-width:685px){
+    .cities{
+        grid-template-columns: repeat(3, 1fr);
+     }
+}
+@media only screen and (max-width:520px){
+    .cities{
+        grid-template-columns: repeat(2, 1fr);
+     }
 }

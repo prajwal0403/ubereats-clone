@@ -90,3 +90,62 @@
     font-weight: 500;
     line-height: 16px;
 }
+
+@media only screen and (max-width:685px) {
+    #baseinp{
+        width: 200px;
+        height: 40px;
+    }
+    
+    
+    #baseinp input{
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        margin: 4px 2% ;
+    }
+    /* #baseinp svg{
+        margin-left: 20px;
+    }
+     */
+     #h1{
+        font-size: 40px;
+        font-weight: 700;
+    }
+     .subbase button{
+        height: 40px;
+        width: 100px;
+        font-size: 18px;
+        padding: 6px 8px;
+        margin-left: 10px;
+    }
+}
+@media only screen and (max-width:500px){
+    #h1{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:400px){
+    #h1{
+        font-size: 20px;
+    }
+    #baseinp{
+        width: 180px;
+        height: 30px;
+    }
+    
+    
+    #baseinp input{
+        width: 100%;
+        height: 20px;
+        font-size: 12px;
+        margin: 4px 2% ;
+    }
+     .subbase button{
+        height: 30px;
+        width: 80px;
+        font-size: 14px;
+        padding: 4px 4px;
+        margin-left: 10px;
+    }
+}

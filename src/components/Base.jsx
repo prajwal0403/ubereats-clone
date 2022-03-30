@@ -27,15 +27,11 @@ export const Base = ()=>{
     const [windowSize, setWindowSize] = useState(null)
 
 useEffect(() => {
-    const handleResize = () => {
+    const handleResize = () => 
         setWindowSize(window.innerWidth)
-    }
-
     window.addEventListener('resize', handleResize)
-
     return () => window.removeEventListener('resize', handleResize)
 }, [])
-
 
     return(
         <div 

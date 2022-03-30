@@ -4,6 +4,7 @@ import { Bussiness } from "../components/Bussiness"
 import { Footer } from "../components/Footer"
 import { Maps } from "../components/Maps"
 import { Navbar } from "../components/Navbar"
+import { Product } from "../components/Product"
 import { navSearch, setNavBg } from "../redux/action"
 
 
@@ -33,6 +34,7 @@ export const HomePage = ()=>{
             <Bussiness/>
             <Maps />
             <Footer />
+            {/* <Product/> */}
         </div>
     )
 }

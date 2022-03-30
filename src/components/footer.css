@@ -29,3 +29,20 @@
     line-height: 24px;
     cursor: pointer;
 }
+@media only screen and (max-width:682px){
+    #app{
+        display: none;
+    }
+    .down>div{
+       flex-direction: column;
+       text-align: center;
+    }
+    .dapp{
+        flex-direction: column;
+    }
+    #icons{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}

@@ -16,8 +16,8 @@ export const Navbar = ()=>{
             }}>
           <div className='nav2' >
             <div style={{display:'flex'}}>
-                <div onClick={()=>dispatch(pageStatus(true))} className="menudiv"><svg style={{width:'25px', cursor:'pointer'}} className='menuicon' aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"></path></svg></div>
-                <div className='menudiv'style={{cursor:'pointer'}}><img src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/8b969d35d373b512664b78f912f19abc.svg" alt="" /></div>
+                <div onClick={()=>dispatch(pageStatus(true))} className="menudiv"><svg style={{ cursor:'pointer'}} className='menuicon' aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"></path></svg></div>
+                <div className='menudiv'style={{cursor:'pointer'}}><img id='uberEats' src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/8b969d35d373b512664b78f912f19abc.svg" alt="" /></div>
             </div>
             
         {navSearch.navSearch?<div className='baseinp' style={{boxShadow:focused?'inset 0 -2px 0 black':"",
