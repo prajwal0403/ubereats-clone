@@ -15,8 +15,7 @@
     "build": "cd client && npm install && npm run build",
   },
   "engines": {
-    "node": "v16.13.1",
-    "npm" : "8.5.0"
+    "node": "16.x"
   },
   "eslintConfig": {
     "extends": [
