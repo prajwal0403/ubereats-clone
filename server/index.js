@@ -70,6 +70,7 @@
 // server/index.js
 const path = require('path');
 const express = require('express');
+const PORT = process.env.PORT || 5000;
 const app = express();
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -83,10 +84,9 @@ app.get("/api", (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
-
-app.listen('5000', async()=>{
+app.listen(PORT, async()=>{
     try {
-        console.log('listening on port 5000....')
+        console.log(`listening on ${PORT}....`)
     } catch (error) {
         console.log(error)
     }
