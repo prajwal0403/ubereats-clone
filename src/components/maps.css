@@ -1,0 +1,25 @@
+.map{
+    width: 95%;
+    margin: auto;
+}
+#map{
+    margin: 40px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #82aae8;
+}
+
+.cities{
+   width: 100%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-row-gap: 20px;
+ margin-bottom: 50px;
+}
+.cities div{
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}

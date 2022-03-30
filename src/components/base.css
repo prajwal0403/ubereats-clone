@@ -1,3 +1,22 @@
+.signin{
+    position: fixed;
+    background:white;
+    bottom: 0;
+    left: -300px;
+    width:300px;
+    max-width:300px;
+    z-index: 4;
+    /* position: fixed;
+    width: 300px;
+    margin-left: -300px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 5s;
+    transform: translate(300px, 0px);
+    transition: all 5px; */
+}
 
 .signinpage{
     display: none;
@@ -7,21 +26,15 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 1;
-}
-.signin{
-    position: fixed;
-    width: 300px;
-    background-color: white;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    z-index: 3;
 }
 .base{
     height: 100vh;
     background: #ffc043;
     display: grid;
     align-items: center;
+        background-position: "center";
+     background-size: "cover";
 }
 
 .subbase{
@@ -29,7 +42,7 @@
     margin: auto;
 }
 .subbase button{
-    height: 56px;
+    height: 58px;
     width: 116px;
     color: white;
     font-size: 18px;
@@ -51,7 +64,7 @@
 }
 
 #baseinp{
-    width: 38%;
+    width: 540px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -66,6 +79,7 @@
     border: transparent;
     font-size: 16px;
     margin: 8px 2% ;
+    background-color: transparent;
 }
 #baseinp svg{
     margin-left: 20px;

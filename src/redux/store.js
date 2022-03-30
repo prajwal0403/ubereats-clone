@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from "redux";
-import { pageReducer } from "./openPage/reducer";
+import { NavBgReducer, navSearchReducer, pageReducer } from "./reducer";
 
 
 const rootReducer = combineReducers({
     openPage:pageReducer,
+    navSearch:navSearchReducer,
+    setNavBg:NavBgReducer,
 })
 
 export const store = createStore(rootReducer)
