@@ -1,36 +1,27 @@
 {
-  "name": "ubereats-clone",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.3",
-    "express-validator": "^6.14.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.9",
+    "axios": "^0.26.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-tinder-card": "^1.4.5",
     "redux": "^4.1.2",
-    "styled": "^1.0.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "engines": {
-    "node": "v16.13.1"
   },
   "eslintConfig": {
     "extends": [
