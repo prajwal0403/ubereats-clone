@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-// import { HomePage } from './homePage/HomePage';
+import { HomePage } from './homePage/HomePage';
 
 function App() {
   const [data, setData]= useState(null);
@@ -10,8 +10,8 @@ function App() {
   },[])
   return (
     <div className="App">
-      {/* <HomePage /> */}
-      <p>{!data?"loading...":data}</p>
+      <HomePage />
+      {/* <p>{!data?"loading...":data}</p> */}
     </div>
   );
 }
