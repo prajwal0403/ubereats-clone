@@ -1,0 +1,152 @@
+.navMain{
+display: flex;
+height: 100px;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; 
+}
+.btn1{
+    border-radius: 20px; 
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-left: 50px;
+    background-color: black;
+    color: white;
+    padding-bottom: 10px;
+}
+.cart{height: 20px;padding-top: 5px;}
+.btn2{
+    border-radius: 20px; 
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+    margin-left: 3px;
+}
+.menu1{
+    height: 25px;
+    width: 25px;
+    margin-top: 33px;
+    margin-left: 60px;
+
+}
+.uber{
+    margin-top: 30px;
+    margin-left: 35px;
+}
+.loc{
+    margin-top: 20px;
+    margin-left: 30px; 
+}
+.btns{
+    border-radius: 20px; 
+    margin-top: 28px;
+    margin-left: 20px;
+    height: 30px;
+    width: 535px;
+}
+.deals{
+    display: flex;
+    height: 130px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    text-align: center;
+    justify-content: center;   
+}
+.dealsi{
+ margin-left: 20px;
+ margin-top: 10px;
+ width: 80px;
+ 
+}
+.advert{
+    margin-left: 30px;
+    width: 1400px;
+    
+}
+.mdiv{
+    
+    display: flex;
+  
+}
+.ldiv{
+    /* border: 1px solid red; */
+    height: 800px;
+    width: 400px;
+    margin-left: 35px;
+
+}
+.round{
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 30px;
+    border: 5px solid rgb(77, 75, 75);
+}
+.grocery{
+    margin-right: 35px;
+    font-size: 20px;
+    
+}
+.hov:hover{
+    background-color: rgb(211, 208, 208);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.prodiv{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap: 15px;
+    width: 1057px;
+   
+}
+.rating{
+    background-color: rgb(184, 184, 184);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.prtitle{
+    width: 220px;
+    font-weight: bold;
+}
+.cat{
+    margin-top: 50px;
+}
+.link{
+    text-decoration: none;
+    color: rgb(24, 26, 26);
+}
+.prim{
+    object-fit: cover;
+}
+.dinner{
+    width: 150px;
+    height: 80px;
+    line-height: 5px;
+    margin-right: 10px;
+    text-align: center;    
+}
+.leftpd{
+    width: 320px;
+    
+    padding-left: 30px;
+    color: rgb(68, 68, 67);
+}
+.rightpd{
+   
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap: 15px;
+    width: 1057px;
+
+}
+.tdsp{
+    margin-left: 350px;
+  
+}
