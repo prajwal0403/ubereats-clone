@@ -1,73 +1,52 @@
-require("dotenv").config()
-const {body, validationResult} = require('express-validator');
+const User=require("../model/user.model")
+require('dotenv').config();
+var jwt = require('jsonwebtoken');
 
-const jwt = require('jsonwebtoken');
-const User = require('../model/users.model');
-const path = require('path');
-const { toPath } = require('lodash');
-const newToken = (user)=>{
-    return jwt.sign({user}, "shhhhh");
+const newToken=(user)=>{
+    return jwt.sign({ user}, process.env.JWT);
 }
 
-const login= async(req, res)=>{
+const register=async(req,res,next)=>{
     try{
-        const user = await User.findOne({email:req.body.email});
-        if(!user) {
-           const error = 'invalid username or password'
-            // return res.render("users/login.ejs",{error})
-            return res.send(error)
-        } 
-        
-        const match = user.checkPassword(req.body.password);
-        if(!match) {
-          const  error = 'invalid username or password'
-            // return res.render("users/login.ejs",{error})
-            return res.send(error)
-        } 
-        const token = newToken(user);
-        return res.send({user, token});
+        console.log(req.body)
+        let user=await User.findOne({email:req.body.email});
 
-    } catch(e){
-        return res.status(500).send({message:e.message});
-    }
-}
-
-const register = async(req, res)=>{
-    try{
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-        return res.send(errors.array());
-        
+        if(user){
+            return res.send("user already exist")
         }
-        await User.create({
-            full_name:req.body.full_name,
-            email:req.body.email,
-            password:req.body.password,
-            type:"customer"
-        })
-        const user = await User.findOne({email:req.body.email}).lean().exec();
-        const token = newToken(user) 
-        // console.log(user, token);
-        res.send({user, token});
-    } catch(e){
-        return res.status(500).send({message:e.message});
+        user=await User.create(req.body);
+        const token=newToken(user)
+
+        return res.send({user,token})
+    }
+    catch(err){
+        return res.send(err.message)
     }
 }
 
-const registeradmin = async(req, res)=>{
+
+const login=async(req, res, next)=>{
     try{
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+        console.log(req.body)
+        let user=await User.findOne({email:req.body.email});
+
+        if(!user){
+            return res.send("user donsnot found")
         }
-        await User.create(req.body)
-        const user = await User.findOne({email:req.body.email}).lean().exec();
-        const token = newToken(user) 
-        return res.send(user);
-        // return res.render("users/login.ejs",{user});
-    } catch(e){
-        return res.status(500).send({message:e.message});
+
+        const match=user.check(req.body.password);
+        if(!match){ return res.send("password not matched")}
+        const token=newToken(user)
+
+        return res.send({user,token})
+    }
+    catch(err){
+        return res.send(err.message)
     }
 }
 
-module.exports = {register, login, registeradmin};
+
+
+
+
+module.exports ={register,login}
