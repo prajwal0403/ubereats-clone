@@ -1,12 +1,29 @@
+  require("dotenv").config();
+  const path = require('path');
+  const express = require('express');
+  const connect = require('./configs/db');
+  const PORT = process.env.PORT || 5000;
+ 
+  const countryController = require('./controller/country.controller');
+  const country = require('./model/country.model')
+ 
+  const app = express();
+  
+  app.use(express.json());
+  // Have Node serve the files for our built React app
+  app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-const path = require('path');
-const express = require('express');
+  
+  app.use('/countries',countryController);
+// app.use('/products', productController)
 
-const connect = require('./configs/db.js');
-const app = express();
+
+
+
+
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
-var cors = require('cors')
+const cors = require('cors')
 app.use(cors());
 app.use(express.json());
 
@@ -21,18 +38,18 @@ app.use("/user", usercontrol);
 
 const mailcontrol=require('./controller/mailer')
 app.use("/mailer", mailcontrol);
-// Handle GET requests to /api route
 
 
-// All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-app.listen('5000', async()=>{
+app.listen(PORT, async()=>{
     try {
       await connect();
-        console.log('listening on port 5000....')
+        
+        console.log(`listening on ${PORT}....`)
+
     } catch (error) {
         console.log(error)
     }

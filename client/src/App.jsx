@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import { HomePage } from './homePage/HomePage';
 
 function App() {
-
   return (
     <div className="App">
       <HomePage />
-      {/* {'hello world'} */}
+      {/* <p>{!data?"loading...":data}</p> */}
     </div>
   );
 }
