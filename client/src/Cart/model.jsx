@@ -1,6 +1,5 @@
 import "./model.css"
 import {Debit} from "./debitcart"
-import {Link} from "react-router-dom"
 import {useState} from "react"
  
 

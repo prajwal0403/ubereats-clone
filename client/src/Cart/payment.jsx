@@ -11,9 +11,10 @@ import {discount_10,discount_15,discount_20,discount_25} from "../redux/action"
 export const Payment=()=>{
     const dispatch=useDispatch()
     const list=useSelector((e)=>e)
-
+    // const data = JSON.parse(localStorage.getItem('uber'));
+    // console.log(data);
     const [modal,setModal]=useState(false)
-    var total= 550
+    // var total= 550
     return (
         <>
         { modal && <Modal onClose={() => setModal(false)}/>}
@@ -23,18 +24,16 @@ export const Payment=()=>{
            
     <div style={{width:"50%"}}>
         <div className="Payment">
-        <p className="uber">uber</p>
-        <p className="eats">Eats</p>
+            <p className="uber">uber</p>
+            <p className="eats">Eats</p>
         </div>
         <div className="dish">
             <p className="dishname">McDonald's® (L.A. - Marengo)</p>
         </div>
         <div className="city">
-      <div style={{ lineHeight:"10px"}}>
-          
-          <p className="LA">Los Angeles</p>
-          <p className="ca">CA</p>
-
+            <div style={{ lineHeight:"10px"}}>
+            <p className="LA">Los Angeles</p>
+            <p className="ca">CA</p>
       </div>
       <button className="button">Edit</button>
       </div>
@@ -169,7 +168,7 @@ If you’re not around when the delivery person arrives, they’ll leave your or
            </div>
        <div className="total">
           <p>Total</p>
-          <p>{"Rs" +" "+(total- list) +".00" +"-/-"}</p>
+          <div>{`$ ${total} ${list}`}</div>
        </div>
        <hr></hr>
        <div className="tip">

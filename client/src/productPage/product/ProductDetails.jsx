@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../navbarProd/navbar";
 import { IoStarSharp } from "react-icons/io5";
 import { nanoid } from "nanoid";
 
 export const ProductDetails=()=>{
+    const navigate= useNavigate()
     const [prod,setProd]=useState({});
     const {id}=useParams();
     console.log(id)
@@ -131,7 +132,7 @@ const prodr=[
         <div><h1>{prod.title}</h1></div>
         <div><h4><IoStarSharp/> Rating  {prod.rating} (500+ Ratings) </h4></div>
         <h4>Time : {prod.time}-{prod.time+10} Min</h4>
-        <button onClick={()=>cart(prod)}>Add To Cart</button>
+        {/* <button style={{fontSize:"16px",padding:"12px 16px",border:"transparent",background:'#EEEEEE', borderRadius:'5px',cursor:'pointer'}} onClick={()=>{cart(prod);navigate('')}}>Add To Cart</button> */}
         <div  style={{display:"flex"}}>
             <div className="dinner"><div><h1>Dinner</h1></div>
             <p>5:00 PM – 3:59 AM</p>
