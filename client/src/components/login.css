@@ -5,6 +5,10 @@
     height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+    overflow: scroll;
+}
+::-webkit-scrollbar{
+    display: none;
 }
 .signpage{
   margin-top: 20px;
@@ -48,4 +52,9 @@
 }
 .ibtn:active{
     background-color: rgb(240, 227, 227);
+}
+.loginIcons>div{
+   display: flex;
+   margin-top: -40px;
+   gap:20px
 }

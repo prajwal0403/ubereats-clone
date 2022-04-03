@@ -1,5 +1,4 @@
-{
-     "prod":[
+[
         {"img":"https://d1ralsognjng37.cloudfront.net/6a2972f8-55a5-4fd3-8625-60a123493fb5.jpeg",
         "title":"Chick-Fil-A (660 S fig)",
         "rating":4.7,
@@ -129,4 +128,3 @@
         "price":80.50
         }
     ]
-}

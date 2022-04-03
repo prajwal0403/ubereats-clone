@@ -4,11 +4,26 @@ import ld from "./ldiv.png"
 import cat from "./cat.png"
 import { nanoid } from "nanoid";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
-import axios from "axios" ;
+import './product.css'
+import { Login } from "../../components/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { pageStatus } from "../../redux/action";
+
 
 export const Product=()=>{
+    const page = useSelector((store)=>store.openPage);
+    const dispatch = useDispatch();
+    const buttonRef = useRef(null);
+    const buttonClickedOutside = useOutsideClick(buttonRef);
+    useEffect(() => {
+        // if the the click was outside of the button
+        // do whatever you want
+        if (buttonClickedOutside) {
+          dispatch((pageStatus(false)))
+        }
+      }, [buttonClickedOutside]);
     const data=[
         {
             img:"https://d4p17acsd5wyj.cloudfront.net/shortcuts/deals.png",
@@ -69,7 +84,7 @@ export const Product=()=>{
 
     ];
     const[prod,setProd]=useState([]);
-    useEffect(()=>{axios.get("http://localhost:8080/prod").then((res)=>setProd(res.data))},[]);
+    useEffect(()=>{fetch("/products").then((res)=>res.json()).then((data)=>{setProd(data)})},[]);
     const grocery=[
         {img:"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9zdG9yZXMtbG9nb3MuY29ybmVyc2hvcGFwcC5jb20vc3RvcmUtdGlsZXMvdjEvY2Fyb3VzZWxfc2l6ZS8yYzJhMjkvaW1nX2ZpbGVfbG9nb183NTUwZGVkMy05MWY2LTQzOWUtOGNiZS03NGYzMjlkNDVkZGIucG5nP3ZlcnNpb25JZD12Tld3Q0tQMDk4c1VHeU1mXzlmQWVPVzRuTXFhMTAuTA==",
          title:"Pavilions"
@@ -84,6 +99,7 @@ export const Product=()=>{
       title:"Albertsons"
      },
     ];
+
 //    const prod=[
 //         {img:"https://d1ralsognjng37.cloudfront.net/6a2972f8-55a5-4fd3-8625-60a123493fb5.jpeg",
 //         title:"Chick-Fil-A (660 S fig)",
@@ -183,6 +199,7 @@ export const Product=()=>{
 //         }
 //     ];
 const rating =()=>{
+    
         const d=prod.sort((a,b)=>{
             return b.rating-a.rating
         });
@@ -205,6 +222,14 @@ const rating =()=>{
     
     return <div>
         <Navbar/>
+        <div className='signinpage'   style={{display:page.openPage?'block':'none'}}></div>
+            <div ref={buttonRef}  style={{
+                    translateX:'-300px',                  
+                    transform:page.openPage?'translateX(300px)':'translateX(-300px)',
+                     transition:'all 1s'
+                     }} className='signin'>
+                   <Login /> 
+                </div>
         <div className="deals">{data.map((e)=>{return <div key={nanoid()} className="dealsi"><img className="hov" height="60px" width="60px" src={e.img} alt="" /><div>{e.title}</div>
         </div>})
         }</div>
@@ -230,10 +255,12 @@ const rating =()=>{
                 {grocery.map((e)=>{return <div key={nanoid()} className="grocery"><img height="150px" width="250px" src={e.img} alt="" /><div>{e.title}</div></div>})}
             </div>
             <h1>Today's Offer</h1>
-            <div className="prodiv">
+            <div className="prodiv" style={{height:'500px', overflow:"scroll",}}>
                 {prod.map((e)=>{
+                    console.log(e)
+                    console.log(e,'elements')
                     return <Link className="link" key={e.id} to={`/product/${e.id}`}>
-                        <div className="prduct" key={nanoid()}>
+                        <div className="prduct" key={e._id}>
                         <div className="pdimage"><img  height= "190px"
                         width = "270px" src={e.img} alt="" /></div>
                         <div style={{display:"flex"}}>
@@ -260,3 +287,27 @@ const rating =()=>{
     
 
 }
+
+const useOutsideClick = (ref) => {
+    const [outsieClick, setOutsideClick] = useState(null);
+  
+    useEffect(() => {
+      const handleClickOutside = (e) => {
+        if (!ref.current.contains(e.target)) {
+          setOutsideClick(true);
+        } else {
+          setOutsideClick(false);
+        }
+  
+        setOutsideClick(null);
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  
+    return outsieClick;
+  };

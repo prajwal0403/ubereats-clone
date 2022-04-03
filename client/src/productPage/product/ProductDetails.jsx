@@ -10,10 +10,7 @@ export const ProductDetails=()=>{
     const {id}=useParams();
     console.log(id)
     useEffect(()=>{
-      axios.get(`http://localhost:8080/prod/${id}`).then((res)=>{
-
-        setProd(res.data)
-      })
+      fetch(`/products/${id}`).then((res)=>res.json()).then((data)=>{setProd(data[0])})
     },[]);
     
      const cart = (prod) => {
@@ -134,7 +131,7 @@ const prodr=[
         <div><h1>{prod.title}</h1></div>
         <div><h4><IoStarSharp/> Rating  {prod.rating} (500+ Ratings) </h4></div>
         <h4>Time : {prod.time}-{prod.time+10} Min</h4>
-        <button onClick={cart(prod)}>Add To Cart</button>
+        <button onClick={()=>cart(prod)}>Add To Cart</button>
         <div  style={{display:"flex"}}>
             <div className="dinner"><div><h1>Dinner</h1></div>
             <p>5:00 PM – 3:59 AM</p>
@@ -163,7 +160,7 @@ const prodr=[
                 <h3>Individual Items</h3>
             </div>
            
-            <div className="rightpd">
+            <div className="rightpd" style={{cursor:'pointer'}}>
                 
                 {prodr.map((e)=>{
                     return( <div className="prduct" key={nanoid()}>

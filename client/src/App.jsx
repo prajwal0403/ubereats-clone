@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { HomePage } from './homePage/HomePage';
+
+import { Routers } from './routes/Routers';
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <Routers/>
       {/* <p>{!data?"loading...":data}</p> */}
     </div>
   );

@@ -8,10 +8,9 @@ import { SearchBox } from './SearchBox';
 
 
 export const Base = ()=>{
+  
     const page = useSelector((store)=>store.openPage);
-
     const dispatch = useDispatch();
-    //animation
     const buttonRef = useRef(null);
     const buttonClickedOutside = useOutsideClick(buttonRef);
   
@@ -26,13 +25,15 @@ export const Base = ()=>{
     //responsive
     const [windowSize, setWindowSize] = useState(null)
 
+
 useEffect(() => {
     const handleResize = () => 
         setWindowSize(window.innerWidth)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
 }, [])
-
+    
+  
     return(
         <div 
            className='base'
@@ -41,9 +42,7 @@ useEffect(() => {
                backgroundSize:windowSize>913?'':'cover'
             }}  
         >
-            <div className='signinpage' style={{display:page.openPage?'block':'none'}}>
-                
-            </div>
+            <div className='signinpage'   style={{display:page.openPage?'block':'none'}}></div>
             <div ref={buttonRef}  style={{
                     translateX:'-300px',                  
                     transform:page.openPage?'translateX(300px)':'translateX(-300px)',

@@ -1,0 +1,38 @@
+#otp-container input{
+     width: 44px;
+     height: 44px;
+     text-align: center;
+     margin: 0px 5px;
+     background-color: #EEEEEE;
+     border: transparent;
+     outline: transparent;
+     font-size: 16px;
+     line-height: 24px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.navbtn{
+  display: flex;
+  border: transparent;
+  height: 52px;
+  padding: 14px 16px;
+  border-radius: 30px;
+}
+.navbtn:hover{
+  background-color: #545454;
+}
+.allset{
+   width: 50px;
+   height: 50px;
+   background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 5px solid rgb(0, 85, 255);
+  margin-bottom: 30px
+}
