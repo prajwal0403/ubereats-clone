@@ -7,11 +7,10 @@ const send_mail=async(body)=>{
     console.log(body.otp)
      await transporter.sendMail({
          
-        from:"abhidhek@masai.school",
+        from:"navneetharsh3@mail.com",
         to:body.email,
         subject:"otp",
         text:body.otp.toString(),
-        
         
       });
 }

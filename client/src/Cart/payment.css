@@ -1,196 +1,59 @@
-.container{
-    display:flex;
-    gap:80px
+.bigPaymentbox{
+    display: flex;
+    width: 100%;
 }
-
-.Payment{
-    text-align: left;
-    display:flex
-}
-.uber{
-    font-size:40px;
-    margin-top:5px;
-    font-weight:500;
-    font-style:sans-serif;
-    padding-left:7px
-}
-.eats{
-    font-size:40px;
-    color: mediumseagreen;
-    padding-left:10px;
-    margin-top:5px;
-    font-weight:500;
-    font-style:sans-serif;
-}
-.dish{
-    text-align: left;
-}
-.dishname{
-    font-size:40px;
-    padding-left:35px;
-    margin-top:-10px;
-    font-weight:500;
-    font-style:sans-serif;
-}
-.ca{
-    color:grey;
-    padding-left:30px;
-}
-.button{
-    height:35px;
-    width:60px;
-    margin-left:390px;
-    background-color:#EEEEEE;
-
-    margin-top:25px;
-    border-radius:60px;
-    border:none;
-    font-size: 15px;
-    font-weight: bold;
-}
-.LA{
-    font-weight: 500;
-    padding-left: 30px;
-}
-.city{
-    display:flex;
-    margin-top:-20px
-}
-.delivery{
-    display:flex;
-    margin-left: 30px;
+.bigPaymentbox>div{
+    /* border: 1px solid black; */
     justify-content: space-between;
-    font-size:20px;
-    font-weight:500;
+    gap: 2%;
 }
-.Payment{
-    margin-left:30px;
-    
-   
-    
+.leftPayment{
+    width: 40%;
+    padding: 0px 5%;
 }
-.method{
-    display:flex;
-    
-    font-size:17px;
-    font-style: sans-serif;
-    font-weight:500;
+.rightPayment{
+    background-color: #F6F6F6;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin-left: 60%;
 }
-.item{
-    display:flex;
-    margin-left:30px;
-    font-size:22px;
-    font-style: sans-serif;
-    font-weight:500;
+.rightbtns button{
+    background-color: #EEEEEE;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    height: 36px;
+    border-radius: 20px;
+    width: 52px;
+    border: transparent;
 }
-.item_btn{
-    height:45px;
-    width:130px;
-    margin-left:390px;
-    margin-top:25px;
-    border-radius:35%;
-    border:none;
-    font-size: 15px;
-    font-weight: bold;
+.rightPayment>div{
+    padding: 20px 15%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
 }
-.dish_name{
-    display:flex;
-    margin-left:30px;
-    justify-content:space-around;
-    font-weight:300px
+.rightPayment>div{
+    margin-top: -20px;
 }
-#Remove{
-    width:60px;
-    height:25px;
-    margin-top:17px;
+#pabtn1{
+    background-color: rgba(0, 0, 0, 0.548);
+    width: 70%;
+    margin:40px 15% 10px;
+    font-size: 20px;
+    color: white;
+    padding: 20px 0px;
+    border: transparent;
+}
+#pabtn1:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.payprod{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-}
-svg{
-    width:25px;
-    
-}
-.dish_detail{
-    width:200px;
-    margin-left:230px;
-    line-height: 35px;
-}
-.payment_detail{
-    width:45%;
-    
-    height:100%;
-    background-color:whitesmoke
-    
-}
-.place_order{
-  width:400px;
-  height:50px;
-  border-radius:3px;
-  background-color:black;
-  color:white;
-  font-size:20px;
-  font-family: sans-serif;
-  border:none;
-}
-.payment_order{
-    width:400px;
-    margin-left:100px;
-    margin-top: 80px;
-
-}
-.offer_line{
-    width:375px;
-    height:35px;
-    margin-left:120px;
-    margin-top:35px;
-    color:green;
-
-}
-.subtotal{
-    display:flex;
-    width:400px;
-    margin-left:100px;
-    justify-content:space-between;
-    font-size:18px;
-    font-weight:400;
-    line-height:10px
-}
-.tip{
-    width:400px;
-    margin-left:100px;
-    justify-content:space-between;
-    display:flex;
-    font-size:20px;
-    font-weight:500px;
-    font-style:sans-serif;
-    
-}
-.total{
-    display:flex;
-    justify-content:space-between;
-    margin-left:100px;
-    font-size: 30px;
-    font-weight:600;
-    font-family:sans-serif;
-}
-.add_tip{
-    font-size: 30px;
-    font-weight:600;
-    margin-top:40px;
-    font-family:sans-serif;
-}
-.tip_button{
-    display:flex;
-    justify-content:space-around;
-    margin-left:100px;
-    margin-top: 30px;
-    font-family:sans-serif;
-
-}
-.discount{
-    width:60px;
-    height:60px;
-    border-radius:30px;
-    border:none;
-    background-color:black;
-    color:white
-}

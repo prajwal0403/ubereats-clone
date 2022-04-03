@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../navbarProd/navbar";
 import { IoStarSharp } from "react-icons/io5";
 import { nanoid } from "nanoid";
@@ -12,13 +11,14 @@ export const ProductDetails=()=>{
     console.log(id)
     useEffect(()=>{
       fetch(`/products/${id}`).then((res)=>res.json()).then((data)=>{setProd(data[0])})
-    },[]);
+    },[id]);
     
      const cart = (prod) => {
             let cartdata=JSON.parse(localStorage.getItem("uber")) || [];
             let obj={
                     name:prod.title,
                     price:prod.price,
+                    img:prod.img,
                 }
                cartdata.push(obj)
 
@@ -132,7 +132,7 @@ const prodr=[
         <div><h1>{prod.title}</h1></div>
         <div><h4><IoStarSharp/> Rating  {prod.rating} (500+ Ratings) </h4></div>
         <h4>Time : {prod.time}-{prod.time+10} Min</h4>
-        {/* <button style={{fontSize:"16px",padding:"12px 16px",border:"transparent",background:'#EEEEEE', borderRadius:'5px',cursor:'pointer'}} onClick={()=>{cart(prod);navigate('')}}>Add To Cart</button> */}
+        <Link to={'/payment'}><button style={{fontSize:"16px",padding:"12px 16px",border:"transparent",background:'#EEEEEE', borderRadius:'5px',cursor:'pointer'}} onClick={()=>{cart(prod)}}>Add To Cart</button></Link>
         <div  style={{display:"flex"}}>
             <div className="dinner"><div><h1>Dinner</h1></div>
             <p>5:00 PM – 3:59 AM</p>
